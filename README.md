@@ -1,9 +1,9 @@
 # MPHY0043
-UCL Module - [Artificial Intelligence for Surgery and Intervention](https://ucl.reportlab.com/modules/MPHY0043/pdf/)
-Term 1 (Autumn), 2021-22 Academic Year 
+UCL Module - [Artificial Intelligence for Surgery and Intervention](https://ucl.reportlab.com/modules/MPHY0043/pdf/)  
+>Term 1 (Autumn), 2021-22 Academic Year
 
 
-## Teaching team
+## Contacts
 |Name                 | Email                       | Role                    |
 |---------------------|-----------------------------|-------------------------|
 |Yipeng Hu            | <yipeng.hu@ucl.ac.uk>       | Module Lead             |
@@ -22,7 +22,7 @@ This module uses two deep learning libraries, [TensorFlow](https://www.tensorflo
 Guide and tutorial materials for the deep learning libraries can be found at the [UCL Module COMP0090 - Introduction to Deep Learning](https://github.com/YipengHu/COMP0090), with a more medical-relevant materials in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0041).
 
 ### Other development tools
-[Git](https://git-scm.com/).
+[Git](https://git-scm.com/)
 
 [Jupyter Notebook](https://jupyter.org/)
 
@@ -35,18 +35,23 @@ Guide and tutorial materials for the deep learning libraries can be found at the
 | tools | envs | learning type | applications | remarks |
 
 ### Surgical Data Regression
+[Tutorial directory](tutorials/linear_algebra)
 Linear algebra functions in TensorFlow and PyTorch
 
 ### Surgical Gesture and Skill Assessment
+[Tutorial directory](tutorials/gesture)
 TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS
 
 ### 3D Medical Image Segmentation
+[Tutorial directory](tutorials/segmentation)
 PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data
 
 ### Image Registration
+[Tutorial directory](tutorials/registration)
 PyTorch, Unsupervised registration, MONAI, MedNist dataset
 
-### Workflow recognition
+### Workflow Recognition
+[Tutorial directory](tutorials/workflow)
 TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)
 
 
