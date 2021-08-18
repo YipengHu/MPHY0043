@@ -1,5 +1,5 @@
-# MPHY0043
-UCL Module - [Artificial Intelligence for Surgery and Intervention](https://ucl.reportlab.com/modules/MPHY0043/pdf/)  
+# MPHY0043: Artificial Intelligence for Surgery and Intervention
+UCL Module, Department of Medical Physics and Biomedical Engineering  
 >Term 1 (Autumn), 2021-22 Academic Year
 
 
