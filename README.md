@@ -1,6 +1,6 @@
 # MPHY0043: Artificial Intelligence for Surgery and Intervention
-UCL Module, Department of Medical Physics and Biomedical Engineering  
->Term 1 (Autumn), 2021-22 Academic Year
+UCL Module | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) | UCL Moodle Page
+>Term 1 (Autumn), Academic Year 2021-22 
 
 
 ## Contacts
