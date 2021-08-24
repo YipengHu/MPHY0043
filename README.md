@@ -35,7 +35,7 @@ Although not required, it is ecouraged to use [Git](https://git-scm.com/) with t
 
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  
- Classical machine learning methods using linear algebra and optimisation functions in NumPy, _Keywords_: TensorFlow and PyTorch  
+_Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch  
 _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Surgical Gesture and Skill Assessment
