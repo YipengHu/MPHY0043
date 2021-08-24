@@ -21,38 +21,45 @@ This module uses two deep learning libraries, [TensorFlow](https://www.tensorflo
 
 Guide and tutorial materials for the deep learning libraries can be found at the [UCL Module COMP0090 - Introduction to Deep Learning](https://github.com/YipengHu/COMP0090), with a more medical-relevant materials in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0041).
 
-### Other development tools
-[Git](https://git-scm.com/)
-
-[Jupyter Notebook](https://jupyter.org/)
-
-[Anaconda/Conda](https://www.anaconda.com/products/individual)
-
 [MONAI](https://monai.io/)
+
+### Development tools
+Two development tools, [Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/products/individual), are frequently used in most tutorials and will be required for the assessed group work and coursework. Follow the [instructions]() to set them up on your machine. 
+
+The [Git](https://git-scm.com/) will also be used.
+
+
+
 
 
 ## 2. Tutorials
 | tools | envs | learning type | applications | remarks |
+>Go to individual tutorial directory and read the _readme.md_ file to get started. 
 
 ### Surgical Data Regression
-[Tutorial directory](tutorials/linear_algebra)
-Linear algebra functions in TensorFlow and PyTorch
+[Tutorial directory](tutorials/regression)  
+Classical machine learning methods using linear algebra and optimisation functions in NumPy, TensorFlow and PyTorch  
+Devlopement tools: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Surgical Gesture and Skill Assessment
-[Tutorial directory](tutorials/gesture)
-TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS
+[Tutorial directory](tutorials/gesture)  
+TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS  
+Devlopement tools: Anaconda with TensorFlow
 
 ### 3D Medical Image Segmentation
-[Tutorial directory](tutorials/segmentation)
-PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data
+[Tutorial directory](tutorials/segmentation)  
+PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data  
+Devlopement tools: Anaconda with Pytorch 
 
 ### Image Registration
-[Tutorial directory](tutorials/registration)
-PyTorch, Unsupervised registration, MONAI, MedNist dataset
+[Tutorial directory](tutorials/registration)  
+PyTorch, Unsupervised registration, MONAI, MedNist dataset  
+Devlopement tools: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Workflow Recognition
-[Tutorial directory](tutorials/workflow)
-TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)
+[Tutorial directory](tutorials/workflow)  
+TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)  
+Devlopement tools: Anaconda with TensorFlow
 
 
 ## 3. Reading list
