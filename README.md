@@ -24,9 +24,9 @@ Guide and tutorial materials for the deep learning libraries are widely availabl
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
 ### Development tools
-[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/products/individual) are frequently used in most tutorials and will be required for the assessed group work and coursework. Follow the [instructions]() to set them up on your machine.  
+[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/products/individual) are frequently used in most tutorials and will be required for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
 
-Although not required, it is ecouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [xxx]().
+Although not required, it is ecouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030/-/blob/main/docs/dev_env_git.md) used in MPHY0030.
 
 
 ## 2. Tutorials
@@ -35,28 +35,28 @@ Although not required, it is ecouraged to use [Git](https://git-scm.com/) with t
 
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  
-Classical machine learning methods using linear algebra and optimisation functions in NumPy, TensorFlow and PyTorch  
-Devlopement tools: Jupyter Notebook (via Anaconda/Colab) 
+ Classical machine learning methods using linear algebra and optimisation functions in NumPy, _Keywords_: TensorFlow and PyTorch  
+_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Surgical Gesture and Skill Assessment
 [Tutorial directory](tutorials/gesture)  
-TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS  
-Devlopement tools: Anaconda with TensorFlow
+_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS  
+_Devlopement tools_: Anaconda with TensorFlow
 
 ### 3D Medical Image Segmentation
 [Tutorial directory](tutorials/segmentation)  
-PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data  
-Devlopement tools: Anaconda with Pytorch 
+_Keywords_: PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data  
+_Devlopement tools_: Anaconda with PyTorch 
 
 ### Image Registration
 [Tutorial directory](tutorials/registration)  
-PyTorch, Unsupervised registration, MONAI, MedNist dataset  
-Devlopement tools: Jupyter Notebook (via Anaconda/Colab) 
+_Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
+_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Workflow Recognition
 [Tutorial directory](tutorials/workflow)  
-TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)  
-Devlopement tools: Anaconda with TensorFlow
+_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)  
+_Devlopement tools_: Anaconda with TensorFlow
 
 
 ## 3. Reading list
