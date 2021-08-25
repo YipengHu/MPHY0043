@@ -1,4 +1,4 @@
-# Learning-based Medical Image Registration
+# Image Registration
 
 This is a tutorial adapted from MONAI [2D affine image registration](https://github.com/Project-MONAI/tutorials/blob/master/2d_registration/registration_mednist.ipynb), described as one of first [MONAI registration demos](https://medium.com/pytorch/monai-starts-to-explore-learning-based-medical-image-registration-ab6b143840b7).
 
