@@ -17,9 +17,9 @@ Activate `mphy0043`:
 ```bash
 conda activate mphy0043
 ```
-Install other libraries:
+Install MONAI and its optional dependencies:
 ```bash
-pip install monai gdown
+pip install 'monai[nibabel, gdown, ignite]'
 ```
 `mphy0043` is ready for use. Deactivate and exit:
 ```bash
