@@ -19,7 +19,7 @@ conda activate mphy0043
 ```
 Install MONAI and its optional dependencies:
 ```bash
-pip install 'monai[nibabel, gdown, ignite]'
+pip install "monai[nibabel, gdown, ignite]"
 ```
 `mphy0043` is ready for use. Deactivate and exit:
 ```bash
