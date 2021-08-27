@@ -38,7 +38,7 @@ Although not required, it is ecouraged to use [Git](https://git-scm.com/) with t
 _Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch, #3  
 _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
-### Surgical Gesture and Skill Assessment
+### Surgical Gesture and Skill
 [Tutorial directory](tutorials/gesture)  
 _Keywords_: supervised classification, PyTorch, "off-the-shelf" networks, JIGSAWS, #6  
 _Devlopement tools_: Anaconda with PyTorch
