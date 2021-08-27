@@ -40,13 +40,13 @@ _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab)
 
 ### Surgical Gesture and Skill Assessment
 [Tutorial directory](tutorials/gesture)  
-_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, JIGSAWS  
-_Devlopement tools_: Anaconda with TensorFlow
+_Keywords_: supervised classification, PyTorch, "off-the-shelf" networks, JIGSAWS  
+_Devlopement tools_: Anaconda with PyTorch
 
 ### 3D Medical Image Segmentation
 [Tutorial directory](tutorials/segmentation)  
-_Keywords_: PyTorch, Segmentation, MONAI U-Net, (optionally nnUNet), clinical imaging data  
-_Devlopement tools_: Anaconda with PyTorch 
+_Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data  
+_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab)  
 
 ### Image Registration
 [Tutorial directory](tutorials/registration)  
