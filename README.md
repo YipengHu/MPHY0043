@@ -35,27 +35,27 @@ Although not required, it is ecouraged to use [Git](https://git-scm.com/) with t
 
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  
-_Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch  
+_Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch, #3  
 _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Surgical Gesture and Skill Assessment
 [Tutorial directory](tutorials/gesture)  
-_Keywords_: supervised classification, PyTorch, "off-the-shelf" networks, JIGSAWS  
+_Keywords_: supervised classification, PyTorch, "off-the-shelf" networks, JIGSAWS, #6  
 _Devlopement tools_: Anaconda with PyTorch
 
 ### 3D Medical Image Segmentation
 [Tutorial directory](tutorials/segmentation)  
-_Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data  
+_Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data, #5  
 _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab)  
 
 ### Image Registration
 [Tutorial directory](tutorials/registration)  
-_Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
+_Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset, #4  
 _Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
 
 ### Workflow Recognition
-[Tutorial directory](tutorials/workflow)  
-_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)  
+[Tutorial directory](tutorials/scopic)  
+_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848), #7  
 _Devlopement tools_: Anaconda with TensorFlow
 
 
