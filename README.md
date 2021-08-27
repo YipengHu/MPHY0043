@@ -36,7 +36,7 @@ Although not required, it is ecouraged to use [Git](https://git-scm.com/) with t
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  
 _Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch, #3  
-_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
+_Devlopement tools_: Jupyter Notebook (via Anaconda) 
 
 ### Surgical Gesture and Skill
 [Tutorial directory](tutorials/gesture)  
@@ -46,17 +46,17 @@ _Devlopement tools_: Anaconda with PyTorch
 ### 3D Medical Image Segmentation
 [Tutorial directory](tutorials/segmentation)  
 _Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data, #5  
-_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab)  
+_Devlopement tools_: Jupyter Notebook (via Anaconda)  
 
 ### Image Registration
 [Tutorial directory](tutorials/registration)  
 _Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset, #4  
-_Devlopement tools_: Jupyter Notebook (via Anaconda/Colab) 
+_Devlopement tools_: Jupyter Notebook (via Anaconda) 
 
-### Workflow Recognition
+### Vision and Workflow
 [Tutorial directory](tutorials/scopic)  
 _Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848), #7  
-_Devlopement tools_: Anaconda with TensorFlow
+_Devlopement tools_: Anaconda with TensorFlow 
 
 
 ## 3. Reading list
