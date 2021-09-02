@@ -7,8 +7,9 @@ UCL Module | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering
 |Name                 | Email                       | Role                    |
 |---------------------|-----------------------------|-------------------------|
 |Yipeng Hu            | <yipeng.hu@ucl.ac.uk>       | Module Lead             |
-|Zachary Baum         | <zachary.baum.19@ucl.ac.uk> | Head Teaching Assistant |
-|XXXX XXX             | <bxx.xxxxx@ucl.ac.uk>       | Teaching Assistant      |
+|Zachary Baum         | <zachary.baum.19@ucl.ac.uk> | Head TA                 |
+|Iani Gayo            | <iani.gayo.20@ucl.ac.uk>    | Tutor                   |
+|Nina Montana Brown   | <nina.brown.15@ucl.ac.uk>   | Tutor                   |
 
 
 ## 1. Programming and development
