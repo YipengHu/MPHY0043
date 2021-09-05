@@ -11,20 +11,16 @@ Anaconda can be used on Linux (inc. on ChromeOS), Windows and MacOS. Please foll
 ### Create a conda environment
 After installing Anaconda, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt, by creating a new `mphy0043` environment:
 ```bash
-conda create --name mphy0043 pytorch tensorflow notebook matplotlib 
+conda create --name mphy0043 tensorflow pytorch torchvision notebook matplotlib 
 ```
-Activate `mphy0043`: 
+In the activated `mphy0043`, install other useful libraries:
 ```bash
 conda activate mphy0043
+pip install "monai[nibabel, gdown, ignite]"  # MONAI and its optional dependencies
+pip install av  # PyAV for reading video files
+conda deactivate  # `mphy0043` is ready and can be deactivated
 ```
-Install MONAI and its optional dependencies:
-```bash
-pip install "monai[nibabel, gdown, ignite]"
-```
-`mphy0043` is ready for use. Deactivate and exit:
-```bash
-conda deactivate
-```
+
 
 ## II. Jupyter Notebook
 

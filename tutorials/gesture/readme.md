@@ -37,5 +37,3 @@ Alternatively, run the provided data script to download and extract the data to 
 ```bash
 python data.py
 ```
-
-## OpenCV
