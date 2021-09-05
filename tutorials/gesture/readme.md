@@ -1,5 +1,7 @@
 # Surgical Gesture and Skill
 
+
+## Data
 This is a tutorial that uses the public [JIGSAWS dataset](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) for example applications of gesture recognition and skill assessment.
 
 The JIGSAWS dataset can be downloaded at the [linked site](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/). The dataset will be used in this tutorial is the "video" folder and the meta files in each of the "Knot_Tying", "Needle_Passing" and "Suturing" tasks. Once downloaded, create a directory named "data", extract and copy the folder structure into that directory. The resulting directory structure should be:
@@ -35,3 +37,5 @@ Alternatively, run the provided data script to download and extract the data to 
 ```bash
 python data.py
 ```
+
+## OpenCV
