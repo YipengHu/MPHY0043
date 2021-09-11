@@ -24,7 +24,7 @@ class SimpleVideoDataset():
         _str = {0:'_capture', 1:'_capture1', 2:'_capture2'}[capture_type]
         self.video_filenames = {id: [os.path.join(video_dir,fn) for fn in filenames if id+_str in fn] for id in self.ids}
         if pre_load:
-            print('Decode and preload all videos...')
+            print('Decode and pre-load all videos...')
             self.preloaded_videos = {id: np.concatenate([self._read_video_to_images(fn,num_frames,frame_size) for fn in self.video_filenames[id]],axis=3) for id in self.ids}
             print('Done.')
         else:
@@ -41,7 +41,7 @@ class SimpleVideoDataset():
             video = np.concatenate([self._read_video_to_images(fn,self.num_frames,self.frame_size) for fn in self.video_filenames[id]],axis=3)
         else:
             video = self.preloaded_videos[id]
-        return video, self.labels[id]
+        return np.transpose(video,[3,0,2,1]).astype(np.float32)/255, self.labels[id]  # for torch [C,D,H,W]
 
     
     def _read_video_to_images(self,filename,num_frames=None,size=None,video_id=0):

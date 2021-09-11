@@ -41,7 +41,7 @@ _Devlopement tools_: Jupyter Notebook (via Anaconda)
 
 ### Surgical Gesture and Skill
 [Tutorial directory](tutorials/gesture)  
-_Keywords_: supervised classification, PyTorch, "off-the-shelf" networks, JIGSAWS, #6  
+_Keywords_: supervised classification, PyTorch, 3D CNN, JIGSAWS, #6  
 _Devlopement tools_: Anaconda with PyTorch
 
 ### 3D Medical Image Segmentation
