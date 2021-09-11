@@ -9,7 +9,7 @@ For tutorials that are marked to use either *Anaconda* or *Jupyter Notebook*, us
 Anaconda can be used on Linux (inc. on ChromeOS), Windows and MacOS. Please follow the [official installation instructions](https://docs.anaconda.com/anaconda/install/) for individual machines.
 
 ### Create a conda environment
-After installing Anaconda, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt, by creating a new `mphy0043` environment:
+After installing Anaconda, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt, by creating a new `mphy0043` environmen:
 ```bash
 conda create --name mphy0043 tensorflow pytorch torchvision notebook matplotlib 
 ```
