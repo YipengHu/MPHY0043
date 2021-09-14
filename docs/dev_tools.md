@@ -22,6 +22,8 @@ pip install av  # PyAV for reading video files
 conda deactivate  # `mphy0043` is ready and can be deactivated
 ```
 
+> Installation of TensorFlow and PyTorch can be OS-dependent, especially for GPU-enbaled versions. Please refer to the official guidelines if any issue on individual machines.
+
 
 ## II. Jupyter Notebook
 
