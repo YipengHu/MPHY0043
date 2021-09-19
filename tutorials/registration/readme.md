@@ -7,3 +7,5 @@ The 2D affine image registration tutorial illustrates a workflow of estimating a
 In this workflow, pairs of gray-scale, intensity-normalised images are stacked at the channel dimension as the input to a GlobalNet. The GlobalNet then learns to estimate affine transformation parameters by optimising the mean square errors between the fixed image and the warped moving image — a case of unsupervised learning for affine registration.
 
 In real-world applications, similar affine registration workflows have been widely used to estimate an initial global alignment efficiently. The initial registration step is then followed by or combined with a more refined, local, and non-rigid registration, such as those estimating DDFs or DVFs.
+
+>Further exploring software for medical image registration with deep learning at [DeepReg](http://deepreg.net).
