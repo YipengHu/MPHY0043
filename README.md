@@ -54,7 +54,7 @@ _Devlopement tools_: Jupyter Notebook (via Anaconda)
 _Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
 _Devlopement tools_: Jupyter Notebook (via Anaconda)  
 
-### Point Cloud Classification
+### Point Set Classification
 [Tutorial directory](tutorials/pointset)  
 _Keywords_: TensorFlow, Keras, PointNet, ModelNet dataset  
 _Devlopement tools_: Anaconda with TensorFlow  
