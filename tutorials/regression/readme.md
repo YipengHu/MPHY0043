@@ -1,14 +1,14 @@
 # Surgical Data Regression
 
 This tutorial contains four Jupyter Notebook
-- Linear curve fitting (Python) <[Colab][part1_colab]>
-- Cross validation (Python) <[Colab][part2_colab]>
-- Linear curve fitting (TensorFlow) <[Colab][part3_colab]>
-- Logistic data regression (PyTorch) <[Colab][part4_colab]>
+- Linear curve fitting (Python) <[Notebook][part1_notebook]> <[Colab][part1_colab]>
+- Cross validation (Python) <[Notebook][part2_notebook]> <[Colab][part2_colab]>
+- Linear curve fitting (TensorFlow) <[Notebook][part3_notebook]> <[Colab][part3_colab]>
+- Logistic data regression (PyTorch) <[Notebook][part4_notebook]> <[Colab][part4_colab]>
 
 All the tutorials run directly on Google Colab (by clicking the links above). Get started with [Runtime] -> [Run all]. Alternatively, download the ipynb files, then upload them to [Colab](https://colab.research.google.com). 
 
-Running these on Jupyter notebook requires a number of dependecies to be installed locally, including NumPy, TensorFlow and PyTorch. [Anaconda][https://www.anaconda.com/download/] is recommended for managing these required packages. Following the instruction in [Develop with Anaconda]() tested for this tutorial.  
+Running these on Jupyter notebook requires a number of dependencies to be installed locally, including NumPy, TensorFlow and PyTorch. [Anaconda](https://www.anaconda.com/download/) is recommended for managing these required packages. Following the instruction in [Development Tools](../../docs/dev_tools.md) tested for this tutorial.  
 
 Performance varies.
 
