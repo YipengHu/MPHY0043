@@ -36,23 +36,28 @@ Although not required, it is encouraged to use [Git](https://git-scm.com/) with 
 
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  
-_Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch, #3  
+_Keywords_: Classical machine learning, linear algebra, optimisation, NumPy, TensorFlow and PyTorch  
 _Devlopement tools_: Jupyter Notebook (via Anaconda) 
 
 ### Surgical Gesture and Skill
 [Tutorial directory](tutorials/gesture)  
-_Keywords_: supervised classification, PyTorch, 3D CNN, JIGSAWS, #6  
+_Keywords_: supervised classification, PyTorch, 3D CNN, JIGSAWS  
 _Devlopement tools_: Anaconda with PyTorch
 
 ### 3D Medical Image Segmentation
 [Tutorial directory](tutorials/segmentation)  
-_Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data, #5  
+_Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data  
 _Devlopement tools_: Jupyter Notebook (via Anaconda)  
 
 ### Image Registration
 [Tutorial directory](tutorials/registration)  
-_Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset, #4  
-_Devlopement tools_: Jupyter Notebook (via Anaconda) 
+_Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
+_Devlopement tools_: Jupyter Notebook (via Anaconda)  
+
+### Point Cloud Classification
+[Tutorial directory](tutorials/pointset)  
+_Keywords_: TensorFlow, Keras, PointNet, ModelNet dataset  
+_Devlopement tools_: Anaconda with TensorFlow  
 
 ### Vision and Workflow
 [Tutorial directory](tutorials/scopic)  
