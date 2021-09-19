@@ -6,16 +6,16 @@ This tutorial shows how to integrate MONAI into an existing PyTorch medical DL p
 
 And easily use below features:
 
-Transforms for dictionary format data.
-Load Nifti image with metadata.
-Add channel dim to the data if no channel dimension.
-Scale medical image intensity with expected range.
-Crop out a batch of balanced images based on positive / negative label ratio.
-Cache IO and transforms to accelerate training and validation.
-3D UNet model, Dice loss function, Mean Dice metric for 3D segmentation task.
-Sliding window inference method.
-Deterministic training for reproducibility.
-The Spleen dataset can be downloaded from http://medicaldecathlon.com/.
+- Transforms for dictionary format data.
+- Load Nifti image with metadata.
+- Add channel dim to the data if no channel dimension.
+- Scale medical image intensity with expected range.
+- Crop out a batch of balanced images based on positive / negative label ratio.
+- Cache IO and transforms to accelerate training and validation.
+- 3D UNet model, Dice loss function, Mean Dice metric for 3D segmentation task.
+- Sliding window inference method.
+- Deterministic training for reproducibility.
+- The Spleen dataset can be downloaded from http://medicaldecathlon.com/.
 
 Target: Spleen
 Modality: CT
