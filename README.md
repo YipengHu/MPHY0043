@@ -56,12 +56,12 @@ _Devlopement tools_: Jupyter Notebook (via Anaconda)
 
 ### Point Set Classification
 [Tutorial directory](tutorials/pointset)  
-_Keywords_: TensorFlow, Keras, PointNet, ModelNet dataset  
+_Keywords_: TensorFlow, Keras, PointNet, simulation dataset  
 _Devlopement tools_: Anaconda with TensorFlow  
 
 ### Vision and Workflow
 [Tutorial directory](tutorials/scopic)  
-_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848), #7  
+_Keywords_: TensorFlow Keras, Supervised classification, "off-the-shelf" networks, [endoscopic video data](https://www.synapse.org/#!Synapse:syn25147789/wiki/608848)  
 _Devlopement tools_: Anaconda with TensorFlow 
 
 
