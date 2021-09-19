@@ -1,59 +1,45 @@
-"""
-Title: Point cloud classification with PointNet
-Author: [David Griffiths](https://dgriffiths3.github.io)
-Date created: 2020/05/25
-Last modified: 2020/05/26
-Description: Implementation of PointNet for ModelNet10 classification.
-"""
-"""
-# Point cloud classification
-"""
-
-"""
-## Introduction
-Classification, detection and segmentation of unordered 3D point sets i.e. point clouds
-is a core problem in computer vision. This example implements the seminal point cloud
-deep learning paper [PointNet (Qi et al., 2017)](https://arxiv.org/abs/1612.00593). For a
-detailed intoduction on PointNet see [this blog
-post](https://medium.com/@luis_gonzales/an-in-depth-look-at-pointnet-111d7efdaa1a).
-"""
-
-"""
-## Setup
-If using colab first install trimesh with `!pip install trimesh`.
-"""
-
-
 import os
 import glob
-import trimesh
+#import trimesh
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 tf.random.set_seed(1234)
 
-"""
-## Load dataset
-We use the ModelNet10 model dataset, the smaller 10 class version of the ModelNet40
-dataset. First download the data:
-"""
 
-DATA_DIR = tf.keras.utils.get_file(
-    "modelnet.zip",
-    "http://3dvision.princeton.edu/projects/2014/3DShapeNets/ModelNet10.zip",
-    extract=True,
-)
-DATA_DIR = os.path.join(os.path.dirname(DATA_DIR), "ModelNet10")
 
-"""
-We can use the `trimesh` package to read and visualize the `.off` mesh files.
-"""
+## dataset - the "motion class"
+DIR_URL = "https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030/-/raw/main/tutorials/statistical_motion_model/data/"
+file_paths = {"FILE_TRAIN" : "nodes_train.npy", "FILE_TEST" : "nodes_test.npy", "FILE_TRIS" : "tris.npy"}
 
-mesh = trimesh.load(os.path.join(DATA_DIR, "chair/train/chair_0001.off"))
-mesh.show()
+for f,fn in file_paths.items():
+    dir_tmp = tf.keras.utils.get_file(fn, DIR_URL+fn, cache_dir=os.path.abspath('./'))
+    file_paths[f] = dir_tmp
+
+nodes_motion_train = np.load(file_paths['FILE_TRAIN'])
+nodes_motion_test = np.load(file_paths['FILE_TEST'])
+tris = np.load(file_paths['FILE_TRIS']) 
+
+# plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+idx_shape = 10
+ax.plot_trisurf(nodes_motion_train[:,0,idx_shape], 
+                nodes_motion_train[:,1,idx_shape], 
+                nodes_motion_train[:,2,idx_shape], 
+                triangles=tris, 
+                cmap=plt.cm.gist_heat)
+plt.show()
+
+
+## simulate - the "affine class"
+
+
+
 
 """
 To convert a mesh file to a point cloud we first need to sample points on the mesh
