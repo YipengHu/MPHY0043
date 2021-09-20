@@ -1,5 +1,6 @@
 # Surgical Gesture and Skill
 
+<img src="../../docs/media/jigsaws_160x120.gif" alt="alt text"/>
 
 ## Data
 This is a tutorial that uses the public [JIGSAWS dataset](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) for example applications of gesture recognition and skill assessment.
@@ -43,5 +44,3 @@ Once data are downloaded, run the `video_classification.py` script in the `mphy0
 conda activate mphy0043
 python video_classification.py
 ```
-
-<img src="../../docs/media/jigsaws_80x60.gif" alt="alt text"/>
