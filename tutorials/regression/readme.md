@@ -12,6 +12,7 @@ Running these on Jupyter notebook requires a number of dependencies to be instal
 
 Performance varies.
 
+<img src="../../docs/media/linear.png" alt="alt text"/>
 
 [part1_notebook]: https://github.com/YipengHu/MPHY0043/blob/master/tutorials/regression/01-CurveFitting.ipynb
 [part1_colab]: https://colab.research.google.com/github/YipengHu/MPHY0043/blob/master/tutorials/regression/01-CurveFitting.ipynb
