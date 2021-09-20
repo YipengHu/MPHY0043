@@ -2,6 +2,8 @@
 
 This is a tutorial adapted from [Spleen 3D segmentation with MONAI](https://github.com/Project-MONAI/tutorials/blob/master/3d_segmentation/spleen_segmentation_3d.ipynb).
 
+<img src="../../docs/media/spleen.png" alt="alt text"/>
+
 This tutorial shows how to integrate MONAI into an existing PyTorch medical DL program.
 
 And easily use below features:
