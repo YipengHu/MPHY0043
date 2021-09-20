@@ -16,6 +16,8 @@ import utils
 
 tf.random.set_seed(43)
 
+
+## dataset - the "motion class"
 DATA_DIR = 'datasets/'
 file_paths = {"FILE_TRAIN" : "nodes_train.npy", "FILE_TEST" : "nodes_test.npy", "FILE_TRIS" : "tris.npy"}
 for f,fn in file_paths.items():
@@ -26,25 +28,43 @@ nodes_motion_test = np.load(file_paths['FILE_TEST']).astype(np.float32)
 tris = np.load(file_paths['FILE_TRIS']).astype(np.float32)
 
 # normalise the data
-disp = - nodes_motion_train[...,0].min(0) # use the first one as reference
-scale = 1 / (nodes_motion_train[...,0].max(0)-nodes_motion_train[...,0].min(0)).max()
-nodes_motion_train = utils.normalise_pointset(nodes_motion_train, scale, disp)
+ref_id = 0
+nodes_ref = nodes_motion_train[...,ref_id]
+disp = - nodes_ref.min(0) # use the first one as reference
+scale = 1 / (nodes_ref.max(0)-nodes_ref.min(0)).max()
+nodes_ref = utils.normalise_pointset(nodes_ref[...,None], scale, disp)
+nodes_motion_train = utils.normalise_pointset(np.delete(nodes_motion_train,ref_id,axis=2), scale, disp)
 nodes_motion_test = utils.normalise_pointset(nodes_motion_test, scale, disp)
 
-# plot
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-idx = 0
-ax.plot_trisurf(nodes_motion_train[idx,:,0], 
-                nodes_motion_train[idx,:,1], 
-                nodes_motion_train[idx,:,2], 
-                triangles=tris)
+
+## simulate the "affine class"
+affine_scale = 0.2
+nodes_affine_train = utils.random_affine_transform_pointset(nodes_ref, num=nodes_motion_train.shape[0], scale=affine_scale)
+nodes_affine_test = utils.random_affine_transform_pointset(nodes_ref, num=nodes_motion_test.shape[0], scale=affine_scale)
+
+
+## add noise for the "noise class"
+noise_std = 0.005
+nodes_noise_train = nodes_ref + tf.random.normal(nodes_motion_train.shape,stddev=noise_std)
+nodes_noise_test = nodes_ref + tf.random.normal(nodes_motion_test.shape,stddev=noise_std)
+
+
+## plot all
+idx = np.random.choice(nodes_motion_train.shape[0])
+fig = plt.figure(figsize=[12.8,9.6], tight_layout=True)
+ax = fig.add_subplot(2,2,1, projection='3d')
+ax.plot_trisurf(nodes_ref[0,:,0], nodes_ref[0,:,1], nodes_ref[0,:,2], triangles=tris)
+ax.title.set_text('Reference')
+ax = fig.add_subplot(2,2,2, projection='3d')
+ax.plot_trisurf(nodes_motion_train[idx,:,0], nodes_motion_train[idx,:,1], nodes_motion_train[idx,:,2], triangles=tris)
+ax.title.set_text('Motion')
+ax = fig.add_subplot(2,2,3, projection='3d')
+ax.plot_trisurf(nodes_affine_train[idx,:,0], nodes_affine_train[idx,:,1], nodes_affine_train[idx,:,2], triangles=tris)
+ax.title.set_text('Affine')
+ax = fig.add_subplot(2,2,4, projection='3d')
+ax.plot_trisurf(nodes_noise_train[idx,:,0], nodes_noise_train[idx,:,1], nodes_noise_train[idx,:,2], triangles=tris)
+ax.title.set_text('Noise')
 plt.show()
-
-
-## simulate - the "affine class"
-scale = 0.1
-num = 199
 
 
 

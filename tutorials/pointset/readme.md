@@ -11,5 +11,8 @@ python download_data.py
 ```
 The run the motion classification script:
 ```bash
-python motion_classification
+python motion_classification.py
 ```
+
+
+<img src="../../docs/media/motion.jpg" alt="alt text"/>
