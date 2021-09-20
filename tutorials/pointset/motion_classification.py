@@ -1,6 +1,9 @@
+
+#This tutorial is adapted from [Point cloud classification with PointNet](https://keras.io/examples/vision/pointnet/) with TensorFlow and Keras.
+
 import os
 import glob
-#import trimesh
+
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
@@ -8,35 +11,40 @@ from tensorflow.keras import layers
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-tf.random.set_seed(1234)
+import utils
 
 
+tf.random.set_seed(43)
 
-## dataset - the "motion class"
-DIR_URL = "https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030/-/raw/main/tutorials/statistical_motion_model/data/"
+DATA_DIR = 'datasets/'
 file_paths = {"FILE_TRAIN" : "nodes_train.npy", "FILE_TEST" : "nodes_test.npy", "FILE_TRIS" : "tris.npy"}
-
 for f,fn in file_paths.items():
-    dir_tmp = tf.keras.utils.get_file(fn, DIR_URL+fn, cache_dir=os.path.abspath('./'))
-    file_paths[f] = dir_tmp
+    file_paths[f] = DATA_DIR+fn
 
-nodes_motion_train = np.load(file_paths['FILE_TRAIN'])
-nodes_motion_test = np.load(file_paths['FILE_TEST'])
-tris = np.load(file_paths['FILE_TRIS']) 
+nodes_motion_train = np.load(file_paths['FILE_TRAIN']).astype(np.float32)
+nodes_motion_test = np.load(file_paths['FILE_TEST']).astype(np.float32)
+tris = np.load(file_paths['FILE_TRIS']).astype(np.float32)
+
+# normalise the data
+disp = - nodes_motion_train[...,0].min(0) # use the first one as reference
+scale = 1 / (nodes_motion_train[...,0].max(0)-nodes_motion_train[...,0].min(0)).max()
+nodes_motion_train = utils.normalise_pointset(nodes_motion_train, scale, disp)
+nodes_motion_test = utils.normalise_pointset(nodes_motion_test, scale, disp)
 
 # plot
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-idx_shape = 10
-ax.plot_trisurf(nodes_motion_train[:,0,idx_shape], 
-                nodes_motion_train[:,1,idx_shape], 
-                nodes_motion_train[:,2,idx_shape], 
-                triangles=tris, 
-                cmap=plt.cm.gist_heat)
+idx = 0
+ax.plot_trisurf(nodes_motion_train[idx,:,0], 
+                nodes_motion_train[idx,:,1], 
+                nodes_motion_train[idx,:,2], 
+                triangles=tris)
 plt.show()
 
 
 ## simulate - the "affine class"
+scale = 0.1
+num = 199
 
 
 
