@@ -15,3 +15,10 @@ def random_affine_transform_pointset(ps,**kwargs):
     transforms = random_affine_transform(**kwargs)
     return tf.matmul(ps,transforms)
 
+
+def augment(points, label):
+    # jitter points
+    points += tf.random.uniform(points.shape, -1e-4, 1e-4, dtype=tf.float32)
+    # shuffle points
+    points = tf.random.shuffle(points)
+    return points, label
