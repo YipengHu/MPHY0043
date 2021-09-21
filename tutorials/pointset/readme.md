@@ -1,4 +1,4 @@
-# Intra-operative motion Classification
+# Intra-operative Motion Classification
 
 This tutorial is adapted from [Point cloud classification with PointNet](https://keras.io/examples/vision/pointnet/) with TensorFlow and Keras.
 
