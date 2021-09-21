@@ -54,7 +54,7 @@ _Devlopement tools_: Jupyter Notebook (via Anaconda)
 _Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
 _Devlopement tools_: Jupyter Notebook (via Anaconda)  
 
-### Intra-operative Motion Classification
+### Intraoperative Motion Classification
 [Tutorial directory](tutorials/pointset)  
 _Keywords_: TensorFlow, Keras, PointNet, simulated dataset  
 _Devlopement tools_: Anaconda with TensorFlow  
