@@ -39,7 +39,7 @@ Alternatively, run the provided data downloading script to download and extract 
 python download_data.py
 ```
 
-Once data are downloaded, run the `video_classification.py` script in the `mphy0043` conda env:
+Once data are downloaded, run the `video_classification.py` script in the [mphy0043 conda env](../../docs/dev_tools.md):
 ```bash
 conda activate mphy0043
 python video_classification.py
