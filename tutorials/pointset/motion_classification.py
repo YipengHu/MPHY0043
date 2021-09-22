@@ -66,7 +66,9 @@ ax.title.set_text('Affine')
 ax = fig.add_subplot(2,2,4, projection='3d')
 ax.plot_trisurf(nodes_noise_train[idx,:,0], nodes_noise_train[idx,:,1], nodes_noise_train[idx,:,2], triangles=tris)
 ax.title.set_text('Noise')
-plt.show()
+# plt.show()
+plt.savefig('example_motion.jpg',bbox_inches='tight')
+print('Examples of different types of motion saved.')
 
 
 ## putting all points together
@@ -126,4 +128,6 @@ for i in range(8):
         )
     )
     ax.set_axis_off()
-plt.show()
+#plt.show()
+plt.savefig('example_results.jpg',bbox_inches='tight')
+print('Example classification results saved.')
