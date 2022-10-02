@@ -20,7 +20,7 @@ All practical tutorials, group work and coursework projects in this module are b
 ### Machine learning, deep learning
 This module uses two deep learning libraries, [TensorFlow](https://www.tensorflow.org/) and [PyTorch](https://pytorch.org/).
 
-Guide and tutorial materials for the deep learning libraries are widely available, for example, from the [UCL Module COMP0090 - Introduction to Deep Learning](https://github.com/YipengHu/COMP0090), with relevant materials designed for medical applications in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0041).  
+Guide and tutorial materials for the deep learning libraries are widely available, for example, from the [UCL Module COMP0197 - Applied Deep Learning](https://github.com/YipengHu/COMP0197), with relevant materials designed for medical applications in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0041).  
 
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
