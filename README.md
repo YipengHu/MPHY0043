@@ -14,19 +14,19 @@
 ## 1. Programming and development
 
 ### Python, numerical computing 
-All practical tutorials, group work and coursework projects in this module are based on Python, with a number of common libraries, including NumPy, SciPy and Matplotlib. For a refresher or relevant materials in medical image analysis, please have a look at the [UCL Module MPHY0030 - Programming Foundations in Medical Image Analysis](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030).
+All practical tutorials, group work and coursework projects in this module are based on Python, with a number of common libraries, including NumPy, SciPy and Matplotlib. For a refresher or relevant materials in medical image analysis, please have a look at the [UCL Module MPHY0030 - Programming Foundations in Medical Image Analysis](https://github.com/YipengHu/MPHY0030).
 
 ### Machine learning, deep learning
 This module uses two deep learning libraries, [TensorFlow](https://www.tensorflow.org/) and [PyTorch](https://pytorch.org/).
 
-Guide and tutorial materials for the deep learning libraries are widely available, for example, from the [UCL Module COMP0197 - Applied Deep Learning](https://github.com/YipengHu/COMP0197), with relevant materials designed for medical applications in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0041).  
+Guide and tutorial materials for the deep learning libraries are widely available, for example, from the [UCL Module COMP0197 - Applied Deep Learning](https://github.com/YipengHu/COMP0197), with relevant materials designed for medical applications in the [UCL Module MPHY0041 - Machine Learning in Medical Imaging](https://github.com/YipengHu/MPHY0041).  
 
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
 ### Development tools
 [Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/products/individual) are frequently used in most tutorials and will be required for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
 
-Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030/-/blob/main/docs/dev_env_git.md) used in MPHY0030.
+Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://github.com/YipengHu/MPHY0030/blob/main/docs/dev_env_git.md) used in MPHY0030.
 
 
 ## 2. Tutorials

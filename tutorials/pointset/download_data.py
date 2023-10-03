@@ -4,7 +4,7 @@ import os
 import tensorflow as tf
 
 ## dataset - the "motion class"
-DIR_URL = "https://weisslab.cs.ucl.ac.uk/YipengHu/mphy0030/-/raw/main/tutorials/statistical_motion_model/data/"
+DIR_URL = "https://github.com/YipengHu/MPHY0030/blob/main/tutorials/statistical_motion_model/data/"
 file_paths = {"FILE_TRAIN" : "nodes_train.npy", "FILE_TEST" : "nodes_test.npy", "FILE_TRIS" : "tris.npy"}
 
 for f,fn in file_paths.items():
