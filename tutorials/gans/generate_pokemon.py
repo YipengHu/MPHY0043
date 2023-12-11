@@ -177,6 +177,10 @@ class PokeDataset(Dataset):
 
 if __name__ == '__main__':
     
+    #### code for generating new pokemon, using DCGAN (deep convolutional generative adversarial networks)
+    #### uses a pokemon dataset (under data) obtained from Kaggle: https://www.kaggle.com/datasets/kvpratama/pokemon-images-dataset/data
+    # TODO : implement generate script to create new pokemon from trained models 
+        
     # DEFINING HYPERPARAMETERS / PARAMETERS
     BATCH_SIZE = 32
     NUM_CHANNELS = 4  # Number of channels in the training images. Using 3d volume -> Channels = z_dim = 48 
