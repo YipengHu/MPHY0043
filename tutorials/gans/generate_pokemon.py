@@ -179,8 +179,7 @@ if __name__ == '__main__':
     
     #### code for generating new pokemon, using DCGAN (deep convolutional generative adversarial networks)
     #### uses a pokemon dataset (under data) obtained from Kaggle: https://www.kaggle.com/datasets/kvpratama/pokemon-images-dataset/data
-    # TODO : implement generate script to create new pokemon from trained models 
-        
+
     # DEFINING HYPERPARAMETERS / PARAMETERS
     BATCH_SIZE = 32
     NUM_CHANNELS = 4  # Number of channels in the training images. Using 3d volume -> Channels = z_dim = 48 
@@ -191,108 +190,98 @@ if __name__ == '__main__':
     LR = 0.0001
     BETA1 = 0.5 # Beta1 hyperparam for Adam optimizers
     NUM_GPU = 1    # Number of GPUs available. Use 0 for CPU mode.
+    UPDATE_FREQ = 500 # save model / images after every 500 iterations;
     device = torch.device("cuda" if (torch.cuda.is_available() and NUM_GPU > 0) else "cpu")
     
-    # DATASET FOLDER 
+    # DATASET FOLDER, DATALOADERS 
     folder = './data'
     poke_ds = PokeDataset(folder, resize_size=64)
     poke_dataloader = DataLoader(poke_ds, batch_size = BATCH_SIZE)
     BASE_DIR = os.path.join(os.getcwd(), 'RESULTS') # for saving results into 
     os.makedirs(BASE_DIR, exist_ok=True)
     
+    # DEFINING AND INITIALISING MODEL WEIGHTS FOR GEN/DIS
     Generator_net = Generator().to(device)
     Generator_net.apply(weights_init)  # Apply the weights_init function to randomly initialize all weightsto mean=0, stdev=0.2.
     Discriminator_net = Discriminator(NUM_CHANNELS=NUM_CHANNELS, NUM_DIS_FEATURES=64).to(device)
     Discriminator_net.apply(weights_init)
     
-    # Defining loss function
+    # DEFINING LOSS FUNCTIONS AND OPTIMISERS 
     criterion = nn.BCELoss()
-    
-    # Create latent space vectors for generator 
-    fixed_noise = torch.randn(NUM_GEN_FEATURES, SIZE_Z, 1, 1, device=device)
-    
-    real_label = 1.
-    fake_label = 0.
     optimizerD = torch.optim.Adam(Discriminator_net.parameters(), lr=LR, betas=(BETA1, 0.999))
     optimizerG = torch.optim.Adam(Generator_net.parameters(), lr=LR, betas=(BETA1, 0.999))
+    
+    # Create latent space vectors for generator, and define real / fake labels  
+    fixed_noise = torch.randn(NUM_GEN_FEATURES, SIZE_Z, 1, 1, device=device)
+    real_label = 1.
+    fake_label = 0.
 
-
+    # Keep track of losses G, D 
     G_losses = []
     D_losses = []
-    iters = 0
     
-    # For saving h5py file and summary staistics 
+    # Optional: Save results on tensorboard 
     RUNS_DIR = os.path.join(BASE_DIR, 'runs')
     os.makedirs(RUNS_DIR, exist_ok=True)
     writer = SummaryWriter(RUNS_DIR)    
 
+    # START TRAINING PROCESS 
     print("Starting Training Loop...")
-    # For each epoch
+    iters = 0
     for epoch in range(NUM_EPOCHS):
         
         # For each batch in the dataloader
         for i, data in enumerate(poke_dataloader):
            
+            data = data.to(device)
+            b_size = data.size(0) # batch size 
+            
             ############################
             # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
             ###########################
-            
-            ## Train with all-real batch
+
             Discriminator_net.zero_grad()
             
-            # Format batch
-            #real_cpu = data[0].to(device)
-            data = data.to(device)
-            b_size = data.size(0)
-            label = torch.full((b_size,), real_label, dtype=torch.float, device=device)
-  
-            # Forward pass real batch through D
-            output = Discriminator_net(data).view(-1)
-            
-            # Calculate loss on all-real batch
-            errD_real = criterion(output, label)
-            # Calculate gradients for D in backward pass
-            errD_real.backward()
-            D_x = output.mean().item()
+            ### Part 1) Real data compute log(D(x))
+            label = torch.full((b_size,), real_label, dtype=torch.float, device=device) # real label = 1 
+            output = Discriminator_net(data).view(-1)   # Forward pass real batch through D
+            errD_real = criterion(output, label)    # Calculate loss on all-real batch, label = 1
+            errD_real.backward()    # Calculate gradients for D in backward pass
+            D_x = output.mean().item() # D(x) output 
 
-            ## Train with all-fake batch
-            # Generate batch of latent vectors
-            noise = torch.randn(b_size, SIZE_Z, 1, 1, device=device)
-            
-            # Generate fake image batch with G
-            fake = Generator_net(noise)
-            label.fill_(fake_label)
 
-            # Classify all fake batch with D
+            ### Part 2) Use fake data to compute (1 - D(G(z)))
+            noise = torch.randn(b_size, SIZE_Z, 1, 1, device=device)    # Generate batch of latent vectors
+            fake = Generator_net(noise)     # Generate fake image batch with G(z)
+            label.fill_(fake_label) # fake label = 0 
             output = Discriminator_net(fake.detach()).view(-1)
-
-            # Calculate D's loss on the all-fake batch
-            errD_fake = criterion(output, label)
-            # Calculate the gradients for this batch, accumulated (summed) with previous gradients
-            errD_fake.backward()
-            D_G_z1 = output.mean().item()
-            # Compute error of D as sum over the fake and the real batches
+            errD_fake = criterion(output, label)    # Calculate loss on the all-fake batch, label = 0 
+            errD_fake.backward()# Calculate the gradients for this batch
+            D_G_z1 = output.mean().item() # D(G(z)) output 
+            
+            ### Part 3) Sum up errors : accumulated (summed) with previous gradients
             errD = errD_real + errD_fake
-            # Update D
-            optimizerD.step()
+            optimizerD.step()   # Update D
 
             ############################
             # (2) Update G network: maximize log(D(G(z)))
             ###########################
+            
             Generator_net.zero_grad()
-            label.fill_(real_label)  # fake labels are real for generator cost
-            # Since we just updated D, perform another forward pass of all-fake batch through D
-            output = Discriminator_net(fake).view(-1)
+            label.fill_(real_label)  # label = 1 to use log(p(x)) of binary cross entropy 
+            output = Discriminator_net(fake).view(-1) # Perform forward pass of fake data, with updated D
+            errG = criterion(output, label)     # Compute loss D(G(z)) by setting label = 1 in bce 
+            errG.backward()     # Calculate gradients for G in backward pass 
+            D_G_z2 = output.mean().item() # Second D(G(z)) output 
+            optimizerG.step()   # Update G parameters 
             
-            # Calculate G's loss based on this output
-            errG = criterion(output, label)
-            # Calculate gradients for G
-            errG.backward()
-            D_G_z2 = output.mean().item()
-            # Update G
-            optimizerG.step()
+            ############################
+            # (3) Output training stats 
             
-            # Output training stats
+            # Training stats 
+            # D(x) : average output (across batch) : starts at 1, should progressively get closer to 0.5
+            # D(G(z)) : Average discriminator output for fake batch : starts at 0, should converge to 0.5 as G gets better 
+            ###########################
             if i % 50 == 0:
                 print('[%d/%d][%d/%d]\tLoss_D: %.4f\tLoss_G: %.4f\tD(x): %.4f\tD(G(z)): %.4f / %.4f'
                     % (epoch, NUM_EPOCHS, i, len(poke_dataloader),
@@ -308,8 +297,12 @@ if __name__ == '__main__':
             writer.add_scalar('Loss/Discrimantor', errD.item(), iters)
             #writer.add_scalar('Metrics/SSIM', ssm_metric, iters)
 
+            ############################
+            # (4) Evaluate model using fixed noise to keep track of progress 
+            ###########################
+            
             # Check how the generator is doing by saving G's output on latent_space_vector
-            if (iters % 100 == 0) or ((epoch == NUM_EPOCHS -1) and (i == len(poke_dataloader)-1)):
+            if (iters % UPDATE_FREQ == 0) or ((epoch == NUM_EPOCHS -1) and (i == len(poke_dataloader)-1)):
                 with torch.no_grad():
                     fake =  Generator_net(fixed_noise).detach().cpu()
 
