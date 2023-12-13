@@ -61,23 +61,20 @@ class Generator(nn.Module):
             nn.BatchNorm2d(NUM_GEN_FEATURES * 8),
             nn.ReLU(True),
             
-            # state size. (NUM_GEN_FEATURES*8) x 4 x 4
             nn.ConvTranspose2d(NUM_GEN_FEATURES * 8, NUM_GEN_FEATURES * 4, 4, 2, 1, bias=False),
             nn.BatchNorm2d(NUM_GEN_FEATURES * 4),
             nn.ReLU(True),
-            # state size. (NUM_GEN_FEATURES*4) x 8 x 8
+            
             nn.ConvTranspose2d( NUM_GEN_FEATURES * 4, NUM_GEN_FEATURES * 2, 4, 2, 1, bias=False),
             nn.BatchNorm2d(NUM_GEN_FEATURES * 2),
             nn.ReLU(True),
-            # state size. (NUM_GEN_FEATURES*2) x 16 x 16
+            
             nn.ConvTranspose2d( NUM_GEN_FEATURES * 2, NUM_GEN_FEATURES, 4, 2, 1, bias=False),
             nn.BatchNorm2d(NUM_GEN_FEATURES),
             nn.ReLU(True),
-            # state size. (NUM_GEN_FEATURES) x 32 x 32
+
             nn.ConvTranspose2d(NUM_GEN_FEATURES, NUM_CHANNELS, 4, 2, 1, bias=False),
-            #nn.Upsample((100,100,24), mode = 'trilinear'),
-            nn.Tanh() # maps input features to between -1 to 1
-            # state size. (nc) x 64 x 64
+            nn.Tanh() # maps input features to between -1 to 1 -> (nc) x 64 x 64
         )
         
     def forward(self, input):
@@ -91,7 +88,7 @@ class Discriminator(nn.Module):
     SIGMOID is applied to obtain probability that image is real or not 
     
     """
-    def __init__(self, NUM_CHANNELS =2, NUM_DIS_FEATURES = 64):    # Size of feature maps in discriminator)
+    def __init__(self, NUM_CHANNELS =2, NUM_DIS_FEATURES = 64):    
         super(Discriminator, self).__init__()
 
         self.main = nn.Sequential(
@@ -130,13 +127,15 @@ class Discriminator(nn.Module):
 
 class PokeDataset(Dataset):
     """
-    Defines pokemon dataset 
+    Dataset used to load pokemon images. Note original image size is not 64x64, so will need to resize using resize functions 
     """
     
     def __init__(self, folder_name, resize_size = 256, use_transform = True):
         
         self.folder_name = folder_name
         all_images = os.listdir(folder_name)
+        
+        # List all image paths within this folder for opening; remove ds store for mac devices
         self.all_image_path = [os.path.join(folder_name,file) for file in all_images if ".DS_Store" not in file]
         self.data_len = len(self.all_image_path)
         self.transform = self.apply_transform()
@@ -144,6 +143,14 @@ class PokeDataset(Dataset):
     
     def __len__(self):
         return self.data_len
+    
+    def __getitem__(self, item):
+        
+        image = Image.open(self.all_image_path[item])
+        image = image.resize((self.resize_size, self.resize_size), resample=Image.BILINEAR)
+        image = self.transform(image)
+        
+        return image
     
     def _normalise(self, img):
         """
@@ -159,15 +166,13 @@ class PokeDataset(Dataset):
 
         return normalised_img.astype(np.float32)
 
-    def __getitem__(self, item):
-        
-        image = Image.open(self.all_image_path[item])
-        image = image.resize((self.resize_size, self.resize_size), resample=Image.BILINEAR)
-        image = self.transform(image)
-        
-        return image
-      
     def apply_transform(self):     
+        """
+        Applies a series of transforms to images
+        Random horizontal flip (for data augmentation), occuring 50% of the time
+        Converts data from PIL image to torch.tensor type
+        Normalises images with mean=0.5, and variance=0.5
+        """
         transform =   transforms.Compose([
                                     transforms.RandomHorizontalFlip(p=0.5),
                                     transforms.ToTensor(),
@@ -196,7 +201,10 @@ if __name__ == '__main__':
     # DATASET FOLDER, DATALOADERS 
     folder = './data'
     poke_ds = PokeDataset(folder, resize_size=64)
-    poke_dataloader = DataLoader(poke_ds, batch_size = BATCH_SIZE)
+    poke_dataloader = DataLoader(poke_ds, 
+                                 batch_size = BATCH_SIZE,
+                                 shuffle = True)
+    
     BASE_DIR = os.path.join(os.getcwd(), 'RESULTS') # for saving results into 
     os.makedirs(BASE_DIR, exist_ok=True)
     
