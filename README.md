@@ -1,14 +1,14 @@
 # MPHY0043: Artificial Intelligence for Surgery and Intervention
-[UCL Module](https://www.ucl.ac.uk/module-catalogue/modules/artificial-intelligence-for-surgery-and-intervention-MPHY0043) | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) | [UCL Moodle Page](https://moodle.ucl.ac.uk/course/view.php?id=36477)
->Term 1 (Autumn), Academic Year 2023-24 
+[UCL Module](https://www.ucl.ac.uk/module-catalogue/modules/artificial-intelligence-for-surgery-and-intervention-MPHY0043) | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) | [UCL Moodle Page](https://moodle.ucl.ac.uk/course/view.php?id=45000)
+>Term 1 (Autumn), Academic Year 2024-25 
 
 
 ## Contacts
-|Name          | Email                        | Role        |
-|--------------|------------------------------|-------------|
-|Yipeng Hu     | <yipeng.hu@ucl.ac.uk>        | Module Lead |
-|Iani Gayo     | <iani.gayo.20@ucl.ac.uk>     | Head TA     |
-|Yuliang Huang | <yuliang.huang.21@ucl.ac.uk> | Tutor       |
+|Name           | Email                         | Role        |
+|---------------|-------------------------------|-------------|
+|Yipeng Hu      | <yipeng.hu@ucl.ac.uk>         | Module Lead |
+|Athena Reissis | <athena.reissis.21@ucl.ac.uk> | Tutor       |
+|Weixi Yi       | <weixi.yi.22@ucl.ac.uk>       | Tutor       |
 
 
 ## 1. Programming and development
@@ -24,14 +24,14 @@ Guide and tutorial materials for the deep learning libraries are widely availabl
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
 ### Development tools
-[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/products/individual) are frequently used in most tutorials and will be required for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
+[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/) are frequently used in most tutorials and may be required for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
 
 Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://github.com/YipengHu/MPHY0030/blob/main/docs/dev_env_git.md) used in MPHY0030.
 
 
 ## 2. Tutorials
 | tools | envs | learning type | applications | remarks |
->Go to individual tutorial directory and read the _readme.md_ file to get started. 
+>Go to individual tutorial sub-directories and read the _readme.md_ file to get started. 
 
 ### Surgical Data Regression
 [Tutorial directory](tutorials/regression)  

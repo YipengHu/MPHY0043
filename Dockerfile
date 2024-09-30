@@ -19,7 +19,7 @@ WORKDIR /workspace
 
 # create the tutorial/coursework conda environment "mphy0043"
 ARG CONDA_ENV="mphy0043"
-RUN conda create -n $CONDA_ENV tensorflow==2.5 \
+RUN conda create -n $CONDA_ENV tensorflow==2.9 \
  && conda activate mphy0043 \
  && pip install notebook matplotlib av "monai[nibabel, gdown, ignite]"
  && echo "source activate $CONDA_ENV" > ~/.bashrc 
