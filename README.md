@@ -1,6 +1,6 @@
 # MPHY0043: Artificial Intelligence for Surgery and Intervention
-[UCL Module](https://www.ucl.ac.uk/module-catalogue/modules/artificial-intelligence-for-surgery-and-intervention-MPHY0043) | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) | [UCL Moodle Page](https://moodle.ucl.ac.uk/course/view.php?id=45000)
->Term 1 (Autumn), Academic Year 2024-25 
+[UCL Module](https://www.ucl.ac.uk/module-catalogue/modules/artificial-intelligence-for-surgery-and-intervention-MPHY0043) | [MPBE](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) | [UCL Moodle Page](https://moodle.ucl.ac.uk/)
+>Term 1 (Autumn)
 
 
 ## Contacts
@@ -24,9 +24,9 @@ Guide and tutorial materials for the deep learning libraries are widely availabl
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
 ### Development tools
-[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/) are frequently used in most tutorials and may be required for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
+[Jupyter Notebook](https://jupyter.org/) and [Anaconda/Conda](https://www.anaconda.com/) are used in certain tutorials and may be helpful for the assessed group work and coursework. Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
 
-Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://github.com/YipengHu/MPHY0030/blob/main/docs/dev_env_git.md) used in MPHY0030.
+Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://github.com/YipengHu/MPHY0030/blob/main/docs/dev_env_git.md).
 
 
 ## 2. Tutorials
