@@ -3,7 +3,7 @@
 <img src="../../docs/media/jigsaws_160x120.gif" alt="alt text"/>
 
 ## Environment
-[mphy0043 conda env](../../docs/dev_tools.md):
+Use the [mphy0043-pt env](../../docs/dev_tools.md):
 
 ```bash
 micromamba activate mphy0043-pt
