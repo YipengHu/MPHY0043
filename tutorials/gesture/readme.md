@@ -2,10 +2,15 @@
 
 <img src="../../docs/media/jigsaws_160x120.gif" alt="alt text"/>
 
-## Data
-This is a tutorial that uses the public [JIGSAWS dataset](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) for example applications of gesture recognition and skill assessment.
+## Environment
+[mphy0043 conda env](../../docs/dev_tools.md):
 
-The JIGSAWS dataset can be downloaded at the [linked site](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/). The dataset will be used in this tutorial is the "video" folder and the meta files in each of the "Knot_Tying", "Needle_Passing" and "Suturing" tasks. Once downloaded, create a directory named "data", extract and copy the folder structure into that directory. The resulting directory structure should be:
+```bash
+micromamba activate mphy0043-pt
+```
+
+## Data
+This is a tutorial that uses the public [JIGSAWS dataset](https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) for example applications of gesture recognition and skill assessment. The dataset will be used in this tutorial is the "video" folder and the meta files in each of the "Knot_Tying", "Needle_Passing" and "Suturing" tasks. Once downloaded, create a directory named "data", extract and copy the folder structure into that directory. The resulting directory structure should be:
 ```
 gesture/data/
     -> Knot_Tying/
@@ -39,8 +44,8 @@ Alternatively, run the provided data downloading script to download and extract 
 python download_data.py
 ```
 
-Once data are downloaded, run the `video_classification.py` script in the [mphy0043 conda env](../../docs/dev_tools.md):
+## Run 
+Once data are downloaded, run the `video_classification.py` script in the `mphy0043-pt` env:
 ```bash
-conda activate mphy0043
 python video_classification.py
 ```

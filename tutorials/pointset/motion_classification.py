@@ -1,8 +1,6 @@
 
 #This tutorial is adapted from [Point cloud classification with PointNet](https://keras.io/examples/vision/pointnet/) with TensorFlow and Keras.
 
-import os
-import glob
 
 import numpy as np
 import tensorflow as tf

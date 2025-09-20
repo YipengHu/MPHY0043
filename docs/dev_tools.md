@@ -8,15 +8,28 @@ For tutorials that are marked to use either *Anaconda* or *Jupyter Notebook*, us
 ### i. Install on different operating systems
 Anaconda can be used on Linux (inc. on ChromeOS), Windows and MacOS. Please follow the [official installation instructions](https://docs.anaconda.com/anaconda/install/) for individual machines.
 
-### ii. Create a conda environment
-After installing Anaconda, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt for Windows, or in a terminal window for macOS or Linux. Create a new `mphy0043` environment:
+### ii. Create development environment
+After installing Anaconda, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt for Windows, or in a terminal window for macOS or Linux. 
+
+#### Create a new `mphy0043-pt` environment for PyTorch and MONAI:
 ```bash
-conda create --name mphy0043 tensorflow==2.9  
+micromamba create --name mphy0043-pt python=3.11
+micromamba activate mphy0043-pt 
+pip install "monai[nibabel, gdown, ignite]"  # monai includes PyTorcch
+pip install notebook matplotlib av pillow
 ```
-In the activated `mphy0043`, install other useful libraries:
+Deactivate the environment before switching/creating a new one:
 ```bash
-conda activate mphy0043 
-pip install notebook matplotlib av "monai[nibabel, gdown, ignite]"  # monai includes PyTorch
+micromamba deactivate 
+```
+
+
+#### Create a new `mphy0043-tf` environment for TensorFlow and Keras:
+```bash
+micromamba create -n mphy0043-tf python=3.11
+micromamba activate mphy0043-tf
+pip install tensorflow==2.17.0  # >=2.16.1 for Keras 3.0 
+pip install notebook matplotlib 
 ```
 
 > Installation of TensorFlow and PyTorch can be OS-dependent, especially for GPU-enbaled versions. Please refer to their official documentations if any issue on individual machines.
