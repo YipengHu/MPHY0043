@@ -10,10 +10,14 @@ In real-world applications, similar affine registration workflows have been wide
 
 
 
-Start the tutorial `registration_mednist.ipynb` with the [mphy0043 conda env](../../docs/dev_tools.md).
-
+Start the tutorial within the [mphy0043-pt env](../../docs/dev_tools.md):
+```bash
+micromamba activate mphy0043-pt
+jupyter notebook
+```
+Then, select the `registration_mednist.ipynb` notebook file.
 
 <img src="../../docs/media/hands.png" alt="alt text"/>
 
 
->Further exploring software for medical image registration with deep learning at [DeepReg](http://deepreg.net).  
+>Further exploring software for medical image registration with deep learning at [DeepReg](https://github.com/DeepRegNet/DeepReg).  
