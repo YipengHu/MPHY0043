@@ -94,9 +94,9 @@ model.summary()
 
 ### Train 
 model.compile(
-    loss="sparse_categorical_crossentropy",
-    optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4),
-    metrics=["sparse_categorical_accuracy"],
+    loss = "sparse_categorical_crossentropy",
+    optimizer = tf.keras.optimizers.Adam(learning_rate=1e-4),
+    metrics = ["sparse_categorical_accuracy"],
 )
 
 model.fit(train_dataset, epochs=20, validation_data=test_dataset)

@@ -1,7 +1,8 @@
 
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+from keras import ops
+import keras
+from keras import layers
 
 
 """
@@ -37,13 +38,13 @@ class OrthogonalRegularizer(keras.regularizers.Regularizer):
     def __init__(self, num_features, l2reg=0.001):
         self.num_features = num_features
         self.l2reg = l2reg
-        self.eye = tf.eye(num_features)
+        self.eye = ops.eye(num_features)
 
     def __call__(self, x):
-        x = tf.reshape(x, (-1, self.num_features, self.num_features))
-        xxt = tf.tensordot(x, x, axes=(2, 2))
-        xxt = tf.reshape(xxt, (-1, self.num_features, self.num_features))
-        return tf.reduce_sum(self.l2reg * tf.square(xxt - self.eye))
+        x = ops.reshape(x, (-1, self.num_features, self.num_features))
+        xxt = ops.tensordot(x, x, axes=(2, 2))
+        xxt = ops.reshape(xxt, (-1, self.num_features, self.num_features))
+        return ops.sum(self.l2reg * ops.square(xxt - self.eye))
 
 
 """
@@ -52,9 +53,8 @@ class OrthogonalRegularizer(keras.regularizers.Regularizer):
 
 
 def tnet(inputs, num_features):
-
-    # Initalise bias as the indentity matrix
-    bias = keras.initializers.Constant(tf.reshape(tf.eye(num_features),[-1,1]))
+    # Initialise bias as the identity matrix
+    bias = keras.initializers.Constant(tf.eye(num_features).numpy().flatten())
     reg = OrthogonalRegularizer(num_features)
 
     x = conv_bn(inputs, 32)
@@ -81,6 +81,7 @@ published in the original paper but with half the number of weights at each laye
 are using the smaller 10 class ModelNet dataset.
 """
 def pointnet(num_points, num_class):
+
     inputs = keras.Input(shape=(num_points, 3))
 
     x = tnet(inputs, 3)
