@@ -8,7 +8,7 @@ This tutorial contains four Jupyter Notebook
 
 All the tutorials run directly on Google Colab (by clicking the links above). Get started with [Runtime] -> [Run all]. Alternatively, download the ipynb files, then upload them to [Colab](https://colab.research.google.com). 
 
-Running these on Jupyter notebook requires a number of dependencies to be installed locally, including NumPy, TensorFlow and PyTorch. [Anaconda](https://www.anaconda.com/download/) is recommended for managing these required packages. Following the instruction in [Development Tools](../../docs/dev_tools.md) tested for this tutorial.  
+Running these on Jupyter notebook requires a number of dependencies to be installed locally, including numpy, matplotlib and TensorFlow/PyTorch. The [mphy0043-tf / mphy0043-pt env](../../docs/dev_tools.md) may be used for this tutorial.  
 
 Performance varies.
 
