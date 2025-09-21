@@ -8,7 +8,7 @@ Micromamba can be used on Linux (inc. Crostini on ChromeOS, WSL on Windows), Mac
 [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main), [Mamba](https://mamba.readthedocs.io/) and potentially other package management tools can also be used to set up the following development environments.
 
 ### ii. Create development environments
-After installing Micromamba, one needs to set up the environment with additional libraries. The simplest way to install the useful packages is to use the Anaconda Prompt for Windows, or in a terminal window for macOS or Linux. 
+After installing Micromamba, one needs to set up the environment with additional libraries.
 
 #### Create a `mphy0043-pt` environment for PyTorch and MONAI:
 ```bash
