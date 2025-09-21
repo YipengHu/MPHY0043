@@ -22,7 +22,7 @@ This module uses two deep learning libraries, [TensorFlow](https://www.tensorflo
 [MONAI](https://monai.io/) is also used, with many dedicated deep learning functionalities designed for medical applications.
 
 ### Development tools
-[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is used for tutorials and may be required for the assessed group work and coursework, together with [Jupyter Notebook](https://jupyter.org/). Follow the [Development Tools](docs/dev_tools.md) to set them up on your machine.  
+[Micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is used for tutorials and may be required for the assessed group work and coursework, together with [Jupyter Notebook](https://jupyter.org/), by following the [Development Tools](docs/dev_tools.md).  
 
 Although not required, it is encouraged to use [Git](https://git-scm.com/) with this repository. Tutorials for its basic uses are also widely available, e.g. [Work with Git](https://github.com/YipengHu/MPHY0030/blob/main/docs/dev_env_git.md).
 
@@ -46,7 +46,7 @@ _Devlopement tools_: PyTorch
 _Keywords_: PyTorch, segmentation, MONAI U-Net, clinical imaging data  
 _Devlopement tools_: MONAI, PyTorch with Jupyter Notebook  
 
-### Image Registration
+### Medical Image Registration
 [Tutorial directory](tutorials/registration)  
 _Keywords_: PyTorch, Unsupervised registration, MONAI, MedNist dataset  
 _Devlopement tools_: MONAI, PyTorch with Jupyter Notebook  
