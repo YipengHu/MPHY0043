@@ -24,7 +24,12 @@ Source: Memorial Sloan Kettering Cancer Center
 Challenge: Large ranging foreground size
 
 
-Start the tutorial `spleen_segmentation_3d.ipynb` with the [mphy0043 conda env](../../docs/dev_tools.md).
+Start the tutorial within the [mphy0043-pt env](../../docs/dev_tools.md):
+```bash
+micromamba activate mphy0043-pt
+jupyter notebook
+```
+Then, select the `spleen_segmentation_3d.ipynb` notebook file.
 
 
 <img src="../../docs/media/spleen.png" alt="alt text"/>
