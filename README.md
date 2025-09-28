@@ -9,6 +9,7 @@
 |Yipeng Hu      | <yipeng.hu@ucl.ac.uk>         | Module Lead |
 |Athena Reissis | <athena.reissis.21@ucl.ac.uk> | Tutor       |
 |Weixi Yi       | <weixi.yi.22@ucl.ac.uk>       | Tutor       |
+|Wen Yan        | <wen-yan@ucl.ac.uk>           | Tutor       |
 
 
 ## 1. Programming and development
