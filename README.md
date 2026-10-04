@@ -6,10 +6,9 @@
 ## Contacts
 |Name           | Email                         | Role        |
 |---------------|-------------------------------|-------------|
-|Yipeng Hu      | <yipeng.hu@ucl.ac.uk>         | Module Lead |
-|Athena Reissis | <athena.reissis.21@ucl.ac.uk> | Tutor       |
+|Yipei Wang     | <yipei.wang@ucl.ac.uk>        | Module Lead |
 |Weixi Yi       | <weixi.yi.22@ucl.ac.uk>       | Tutor       |
-|Wen Yan        | <wen-yan@ucl.ac.uk>           | Tutor       |
+|Bilal Sidiqi   | <bilal.sidiqi.21@ucl.ac.uk>   | Tutor       |
 
 
 ## 1. Programming and development
